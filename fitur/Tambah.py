@@ -23,25 +23,3 @@ def tambah_buku(judul, penulis, tahun, isbn):
     print(f"Sukses: Buku '{judul}' karya {penulis} berhasil ditambahkan!")
     return True
 
-def tampilkan_semua_buku():
-    """Fungsi untuk menampilkan semua buku di perpustakaan."""
-    print("\n--- Daftar Buku Perpustakaan ---")
-    if not koleksi_buku:
-        print("Koleksi masih kosong.")
-        return
-        
-    for i, buku in enumerate(koleksi_buku, 1):
-        print(f"{i}. {buku['judul']} | Penulis: {buku['penulis']} | Tahun: {buku['tahun']} | ISBN: {buku['isbn']}")
-    print("--------------------------------\n")
-
-# --- Contoh Penggunaan Program ---
-
-# Menambahkan buku baru
-tambah_buku("Bumi Manusia", "Pramoedya Ananta Toer", 1980, "978-979-97312-3-4")
-tambah_buku("Laskar Pelangi", "Andrea Hirata", 2005, "978-979-3062-79-2")
-
-# Mencoba menambahkan buku dengan ISBN yang sama (akan gagal)
-tambah_buku("Buku Palsu", "Penulis Anonim", 2026, "978-979-97312-3-4")
-
-# Menampilkan hasil
-tampilkan_semua_buku()
